@@ -1,20 +1,26 @@
 // API Configuration
 // Automatically detect environment and use appropriate API URL
 const API_BASE_URL = (() => {
+    const hostname = window.location.hostname;
+    console.log('Current hostname:', hostname);
+    
     // If running on Render or other production environment
-    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-        // Extract the base domain and construct backend URL
-        const hostname = window.location.hostname;
-        if (hostname.includes('onrender.com')) {
-            // For Render deployment, assume backend is at uae-visa-backend.onrender.com
+    if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
+        if (hostname.includes('onrender.com') || hostname.includes('netlify.app')) {
+            // For Render/Netlify deployment, use the correct backend URL
+            console.log('Detected production environment, using backend URL');
             return 'https://uae-visa-services.onrender.com/api';
         }
         // For other production environments, try same domain with /api
+        console.log('Using same domain with /api');
         return `${window.location.protocol}//${hostname}/api`;
     }
     // Local development
+    console.log('Using local development URL');
     return 'http://localhost:3000/api';
 })();
+
+console.log('Final API_BASE_URL:', API_BASE_URL);
 
 // API Helper Functions
 class APIClient {
@@ -118,6 +124,10 @@ class FormHandler {
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
 
+        console.log('=== VISA APPLICATION SUBMISSION DEBUG ===');
+        console.log('Form element:', form);
+        console.log('API URL being used:', api.baseURL);
+
         try {
             // Show loading state
             submitBtn.disabled = true;
@@ -125,22 +135,47 @@ class FormHandler {
 
             // Create FormData object
             const formData = new FormData(form);
+            
+            // Fix field name mismatch: combine firstName and lastName into fullName
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            if (firstName && lastName) {
+                formData.set('fullName', `${firstName} ${lastName}`);
+                formData.delete('firstName');
+                formData.delete('lastName');
+            }
+            
+            // Log form data for debugging
+            console.log('Form data entries (after processing):');
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}:`, value instanceof File ? `File: ${value.name}` : value);
+            }
+            
+            console.log('Sending request to:', `${api.baseURL}/visa-application`);
 
             // Submit application
             const response = await api.postFormData('/visa-application', formData);
+
+            console.log('Response received:', response);
 
             // Show success message
             this.showMessage('success', `Application submitted successfully! Your application ID is: ${response.applicationId}. You will receive a confirmation email shortly.`);
             
             // Reset form
             form.reset();
+            console.log('Form submitted successfully!');
 
         } catch (error) {
+            console.error('=== ERROR DETAILS ===');
+            console.error('Error submitting visa application:', error);
+            console.error('Error message:', error.message);
+            console.error('Error stack:', error.stack);
             this.showMessage('error', `Failed to submit application: ${error.message}`);
         } finally {
             // Reset button state
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
+            console.log('=== END DEBUG ===');
         }
     }
 
@@ -157,7 +192,18 @@ class FormHandler {
 
             // Get form data
             const formData = new FormData(form);
+            
+            // Fix field name mismatch: combine firstName and lastName into fullName
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            if (firstName && lastName) {
+                formData.set('fullName', `${firstName} ${lastName}`);
+                formData.delete('firstName');
+                formData.delete('lastName');
+            }
+            
             const data = Object.fromEntries(formData.entries());
+            console.log('Contact form data:', data);
 
             // Submit contact message
             const response = await api.post('/contact', data);
@@ -190,7 +236,21 @@ class FormHandler {
 
             // Get form data
             const formData = new FormData(form);
+            
+            // Fix field name mismatch: rename clientName to fullName for backend compatibility
+            const clientName = formData.get('clientName');
+            const clientEmail = formData.get('clientEmail');
+            if (clientName) {
+                formData.set('fullName', clientName);
+                formData.delete('clientName');
+            }
+            if (clientEmail) {
+                formData.set('email', clientEmail);
+                formData.delete('clientEmail');
+            }
+            
             const data = Object.fromEntries(formData.entries());
+            console.log('Feedback form data:', data);
 
             // Handle checkbox arrays
             const aspectsImpressed = formData.getAll('aspectsImpressed');
