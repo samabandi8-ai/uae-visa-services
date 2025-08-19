@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for UAE Visa - UAE Visa Services</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="../images/uae-flag.svg" alt="UAE Flag" class="flag-icon">
+                    <span class="logo-text">UAE Visa Services</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="apply-visa.html" class="nav-link active">Apply Visa</a></li>
+                    <li><a href="visa-news.html" class="nav-link">Visa News</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                    <li><a href="rules.html" class="nav-link">Rules & Regulations</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Apply for UAE Visa</h1>
+            <p>Complete the form below to apply for your UAE visa. All fields marked with <span class="required">*</span> are mandatory.</p>
+        </div>
+    </section>
+
+    <!-- Visa Application Form -->
+    <section class="visa-application">
+        <div class="container">
+            <div class="form-container">
+                <form id="visaApplicationForm" onsubmit="return submitForm('visaApplicationForm', 'Visa application submitted successfully! We will contact you within 24 hours.')">
+                    
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-user"></i> Personal Information</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth <span class="required">*</span></label>
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender <span class="required">*</span></label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nationality">Nationality <span class="required">*</span></label>
+                                <select id="nationality" name="nationality" required>
+                                    <option value="">Select Nationality</option>
+                                    <option value="indian">Indian</option>
+                                    <option value="pakistani">Pakistani</option>
+                                    <option value="bangladeshi">Bangladeshi</option>
+                                    <option value="filipino">Filipino</option>
+                                    <option value="egyptian">Egyptian</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="maritalStatus">Marital Status <span class="required">*</span></label>
+                                <select id="maritalStatus" name="maritalStatus" required>
+                                    <option value="">Select Status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="placeOfBirth">Place of Birth <span class="required">*</span></label>
+                            <input type="text" id="placeOfBirth" name="placeOfBirth" placeholder="City, Country" required>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-phone"></i> Contact Information</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="+91-XXXXXXXXXX" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="currentAddress">Current Address <span class="required">*</span></label>
+                            <textarea id="currentAddress" name="currentAddress" rows="3" placeholder="Complete address with pin code" required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City <span class="required">*</span></label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State/Province <span class="required">*</span></label>
+                                <input type="text" id="state" name="state" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">Country <span class="required">*</span></label>
+                                <input type="text" id="country" name="country" value="India" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pinCode">Pin Code <span class="required">*</span></label>
+                                <input type="text" id="pinCode" name="pinCode" pattern="[0-9]{6}" placeholder="6-digit pin code" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Passport Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-passport"></i> Passport Information</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passportNumber">Passport Number <span class="required">*</span></label>
+                                <input type="text" id="passportNumber" name="passportNumber" style="text-transform: uppercase" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passportIssueDate">Issue Date <span class="required">*</span></label>
+                                <input type="date" id="passportIssueDate" name="passportIssueDate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passportExpiryDate">Expiry Date <span class="required">*</span></label>
+                                <input type="date" id="passportExpiryDate" name="passportExpiryDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passportIssuePlace">Place of Issue <span class="required">*</span></label>
+                                <input type="text" id="passportIssuePlace" name="passportIssuePlace" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visa Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-id-card"></i> Visa Information</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="visaType">Visa Type <span class="required">*</span></label>
+                                <select id="visaType" name="visaType" required>
+                                    <option value="">Select Visa Type</option>
+                                    <option value="tourist">Tourist Visa</option>
+                                    <option value="business">Business Visa</option>
+                                    <option value="employment">Employment Visa</option>
+                                    <option value="family">Family Visa</option>
+                                    <option value="student">Student Visa</option>
+                                    <option value="retirement">Retirement Visa (Security Officers)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="visaDuration">Visa Duration <span class="required">*</span></label>
+                                <select id="visaDuration" name="visaDuration" required>
+                                    <option value="">Select Duration</option>
+                                    <option value="30days">30 Days</option>
+                                    <option value="90days">90 Days</option>
+                                    <option value="1year">1 Year</option>
+                                    <option value="2years">2 Years</option>
+                                    <option value="5years">5 Years</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="purposeOfVisit">Purpose of Visit <span class="required">*</span></label>
+                                <textarea id="purposeOfVisit" name="purposeOfVisit" rows="3" placeholder="Describe the purpose of your visit to UAE" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="intendedArrival">Intended Arrival Date <span class="required">*</span></label>
+                                <input type="date" id="intendedArrival" name="intendedArrival" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="intendedDeparture">Intended Departure Date</label>
+                                <input type="date" id="intendedDeparture" name="intendedDeparture">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Employment/Professional Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-briefcase"></i> Professional Information</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="occupation">Current Occupation <span class="required">*</span></label>
+                                <input type="text" id="occupation" name="occupation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="employer">Employer/Company Name</label>
+                                <input type="text" id="employer" name="employer">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="monthlyIncome">Monthly Income (INR) <span class="required">*</span></label>
+                                <select id="monthlyIncome" name="monthlyIncome" required>
+                                    <option value="">Select Income Range</option>
+                                    <option value="below-25000">Below ₹25,000</option>
+                                    <option value="25000-50000">₹25,000 - ₹50,000</option>
+                                    <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                                    <option value="100000-200000">₹1,00,000 - ₹2,00,000</option>
+                                    <option value="above-200000">Above ₹2,00,000</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="workExperience">Work Experience (Years)</label>
+                                <input type="number" id="workExperience" name="workExperience" min="0" max="50">
+                            </div>
+                        </div>
+                        
+                        <!-- Special Section for Security Officers -->
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="isSecurityOfficer" name="isSecurityOfficer" onchange="toggleSecurityFields()">
+                                I am a retired Indian security officer from government sector
+                            </label>
+                        </div>
+                        
+                        <div id="securityOfficerFields" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="serviceType">Type of Service</label>
+                                    <select id="serviceType" name="serviceType">
+                                        <option value="">Select Service Type</option>
+                                        <option value="army">Indian Army</option>
+                                        <option value="navy">Indian Navy</option>
+                                        <option value="airforce">Indian Air Force</option>
+                                        <option value="police">Police Service</option>
+                                        <option value="paramilitary">Paramilitary Forces</option>
+                                        <option value="intelligence">Intelligence Services</option>
+                                        <option value="other">Other Government Security</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="serviceNumber">Service Number</label>
+                                    <input type="text" id="serviceNumber" name="serviceNumber">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rank">Rank at Retirement</label>
+                                    <input type="text" id="rank" name="rank">
+                                </div>
+                                <div class="form-group">
+                                    <label for="retirementDate">Date of Retirement</label>
+                                    <input type="date" id="retirementDate" name="retirementDate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Document Upload Section -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-upload"></i> Document Upload</h2>
+                        <p class="upload-note">Please upload clear, colored scanned copies. Maximum file size: 5MB per file. Accepted formats: PDF, JPG, PNG, DOC, DOCX</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passportCopy">Passport Copy (First & Last Page) <span class="required">*</span></label>
+                                <div class="file-upload">
+                                    <input type="file" id="passportCopy" name="passportCopy" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" required>
+                                    <label for="passportCopy" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="photo">Recent Passport Size Photo <span class="required">*</span></label>
+                                <div class="file-upload">
+                                    <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png" required>
+                                    <label for="photo" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="aadharCard">Aadhar Card Copy <span class="required">*</span></label>
+                                <div class="file-upload">
+                                    <input type="file" id="aadharCard" name="aadharCard" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" required>
+                                    <label for="aadharCard" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="panCard">PAN Card Copy</label>
+                                <div class="file-upload">
+                                    <input type="file" id="panCard" name="panCard" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                                    <label for="panCard" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cv">CV/Resume <span class="required">*</span></label>
+                                <div class="file-upload">
+                                    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                                    <label for="cv" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bankStatement">Bank Statement (Last 3 Months)</label>
+                                <div class="file-upload">
+                                    <input type="file" id="bankStatement" name="bankStatement" accept=".pdf,.jpg,.jpeg,.png">
+                                    <label for="bankStatement" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="educationCertificate">Education Certificate</label>
+                                <div class="file-upload">
+                                    <input type="file" id="educationCertificate" name="educationCertificate" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                                    <label for="educationCertificate" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="additionalDocuments">Additional Documents</label>
+                                <div class="file-upload">
+                                    <input type="file" id="additionalDocuments" name="additionalDocuments" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" multiple>
+                                    <label for="additionalDocuments" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Click to upload or drag and drop
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-file-contract"></i> Terms and Conditions</h2>
+                        
+                        <div class="terms-box">
+                            <p><strong>Important Notes:</strong></p>
+                            <ul>
+                                <li>All information provided must be accurate and truthful</li>
+                                <li>False information may result in visa rejection and legal consequences</li>
+                                <li>Processing time is typically 3-7 working days</li>
+                                <li>Visa approval is subject to UAE immigration authorities' discretion</li>
+                                <li>Our services are completely free of charge</li>
+                                <li>We do not guarantee visa approval but ensure proper documentation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                I agree to the <a href="rules.html" target="_blank">Terms and Conditions</a> and confirm that all information provided is accurate <span class="required">*</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
+                                I consent to the processing of my personal data for visa application purposes <span class="required">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-section">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> Submit Visa Application
+                        </button>
+                        <p class="submit-note">By submitting this form, you acknowledge that you have read and understood our terms and conditions.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="../images/uae-flag.svg" alt="UAE Flag" class="flag-icon">
+                        <span class="logo-text">UAE Visa Services</span>
+                    </div>
+                    <p>Professional visa solutions for multinational companies and retired Indian security officers.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="apply-visa.html">Apply Visa</a></li>
+                        <li><a href="rules.html">Rules & Regulations</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> info@uaevisaservices.com</p>
+                    <p><i class="fas fa-phone"></i> +971-XX-XXXXXXX</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 UAE Visa Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        function toggleSecurityFields() {
+            const checkbox = document.getElementById('isSecurityOfficer');
+            const fields = document.getElementById('securityOfficerFields');
+            
+            if (checkbox.checked) {
+                fields.style.display = 'block';
+                // Make security officer fields required
+                document.getElementById('serviceType').required = true;
+                document.getElementById('serviceNumber').required = true;
+                document.getElementById('rank').required = true;
+                document.getElementById('retirementDate').required = true;
+            } else {
+                fields.style.display = 'none';
+                // Remove required attribute
+                document.getElementById('serviceType').required = false;
+                document.getElementById('serviceNumber').required = false;
+                document.getElementById('rank').required = false;
+                document.getElementById('retirementDate').required = false;
+            }
+        }
+        
+        // Set minimum date for passport expiry (should be at least 6 months from today)
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const minExpiryDate = new Date(today.getFullYear(), today.getMonth() + 6, today.getDate());
+            document.getElementById('passportExpiryDate').min = minExpiryDate.toISOString().split('T')[0];
+            
+            // Set minimum date for intended arrival (tomorrow)
+            const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+            document.getElementById('intendedArrival').min = tomorrow.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+</html>

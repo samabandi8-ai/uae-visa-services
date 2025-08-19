@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="uaeColors" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0000;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00732F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky Background -->
+  <rect width="600" height="200" fill="url(#skyGradient)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="200" width="600" height="100" fill="#F5F5DC"/>
+  
+  <!-- Sun -->
+  <circle cx="500" cy="60" r="30" fill="#FFD700" opacity="0.8"/>
+  <circle cx="500" cy="60" r="35" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Clouds -->
+  <g opacity="0.6">
+    <ellipse cx="150" cy="50" rx="25" ry="15" fill="#FFFFFF"/>
+    <ellipse cx="170" cy="45" rx="30" ry="18" fill="#FFFFFF"/>
+    <ellipse cx="190" cy="50" rx="20" ry="12" fill="#FFFFFF"/>
+    
+    <ellipse cx="350" cy="70" rx="20" ry="12" fill="#FFFFFF"/>
+    <ellipse cx="365" cy="65" rx="25" ry="15" fill="#FFFFFF"/>
+    <ellipse cx="380" cy="70" rx="18" ry="10" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Dubai Skyline -->
+  <g transform="translate(0, 200)">
+    <!-- Burj Khalifa (Tallest) -->
+    <rect x="280" y="-150" width="12" height="150" fill="url(#buildingGrad)"/>
+    <polygon points="280,-150 286,-170 292,-150" fill="url(#uaeColors)"/>
+    <rect x="284" y="-145" width="4" height="4" fill="#FFD700"/>
+    <rect x="284" y="-135" width="4" height="4" fill="#FFD700"/>
+    <rect x="284" y="-125" width="4" height="4" fill="#FFD700"/>
+    
+    <!-- Burj Al Arab (Sail-shaped) -->
+    <path d="M 200 -120 Q 220 -140 240 -120 L 240 0 L 200 0 Z" fill="url(#buildingGrad)"/>
+    <path d="M 205 -115 Q 220 -130 235 -115" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="220" cy="-100" r="3" fill="#FFD700"/>
+    
+    <!-- Emirates Towers -->
+    <rect x="320" y="-130" width="20" height="130" fill="url(#buildingGrad)"/>
+    <polygon points="320,-130 330,-140 340,-130" fill="url(#uaeColors)"/>
+    <rect x="350" y="-110" width="18" height="110" fill="url(#buildingGrad)"/>
+    <polygon points="350,-110 359,-120 368,-110" fill="url(#uaeColors)"/>
+    
+    <!-- Building windows -->
+    <g fill="#FFD700">
+      <rect x="325" y="-125" width="3" height="3"/>
+      <rect x="330" y="-125" width="3" height="3"/>
+      <rect x="335" y="-125" width="3" height="3"/>
+      <rect x="325" y="-115" width="3" height="3"/>
+      <rect x="330" y="-115" width="3" height="3"/>
+      <rect x="335" y="-115" width="3" height="3"/>
+      
+      <rect x="355" y="-105" width="2" height="2"/>
+      <rect x="360" y="-105" width="2" height="2"/>
+      <rect x="355" y="-95" width="2" height="2"/>
+      <rect x="360" y="-95" width="2" height="2"/>
+    </g>
+    
+    <!-- Additional Buildings -->
+    <rect x="100" y="-80" width="30" height="80" fill="url(#buildingGrad)"/>
+    <rect x="140" y="-90" width="25" height="90" fill="url(#buildingGrad)"/>
+    <rect x="170" y="-70" width="20" height="70" fill="url(#buildingGrad)"/>
+    
+    <rect x="380" y="-100" width="35" height="100" fill="url(#buildingGrad)"/>
+    <rect x="420" y="-85" width="28" height="85" fill="url(#buildingGrad)"/>
+    <rect x="455" y="-95" width="22" height="95" fill="url(#buildingGrad)"/>
+    <rect x="485" y="-75" width="30" height="75" fill="url(#buildingGrad)"/>
+    
+    <!-- Building Details -->
+    <g fill="#FFD700">
+      <!-- Building 1 windows -->
+      <rect x="110" y="-75" width="4" height="4"/>
+      <rect x="118" y="-75" width="4" height="4"/>
+      <rect x="110" y="-65" width="4" height="4"/>
+      <rect x="118" y="-65" width="4" height="4"/>
+      
+      <!-- Building 2 windows -->
+      <rect x="148" y="-85" width="3" height="3"/>
+      <rect x="155" y="-85" width="3" height="3"/>
+      <rect x="148" y="-75" width="3" height="3"/>
+      <rect x="155" y="-75" width="3" height="3"/>
+      
+      <!-- Building 3 windows -->
+      <rect x="390" y="-95" width="5" height="5"/>
+      <rect x="400" y="-95" width="5" height="5"/>
+      <rect x="390" y="-80" width="5" height="5"/>
+      <rect x="400" y="-80" width="5" height="5"/>
+    </g>
+  </g>
+  
+  <!-- Palm Trees -->
+  <g transform="translate(50, 200)">
+    <!-- Palm 1 -->
+    <rect x="15" y="-30" width="4" height="30" fill="#8B4513"/>
+    <path d="M 17 -30 Q 10 -40 5 -35" fill="none" stroke="#228B22" stroke-width="3"/>
+    <path d="M 17 -30 Q 24 -40 29 -35" fill="none" stroke="#228B22" stroke-width="3"/>
+    <path d="M 17 -30 Q 12 -45 8 -38" fill="none" stroke="#228B22" stroke-width="3"/>
+    <path d="M 17 -30 Q 22 -45 26 -38" fill="none" stroke="#228B22" stroke-width="3"/>
+    <path d="M 17 -30 Q 17 -48 17 -42" fill="none" stroke="#228B22" stroke-width="3"/>
+  </g>
+  
+  <g transform="translate(520, 200)">
+    <!-- Palm 2 -->
+    <rect x="15" y="-25" width="3" height="25" fill="#8B4513"/>
+    <path d="M 16.5 -25 Q 10 -35 6 -30" fill="none" stroke="#228B22" stroke-width="2"/>
+    <path d="M 16.5 -25 Q 23 -35 27 -30" fill="none" stroke="#228B22" stroke-width="2"/>
+    <path d="M 16.5 -25 Q 12 -38 9 -33" fill="none" stroke="#228B22" stroke-width="2"/>
+    <path d="M 16.5 -25 Q 21 -38 24 -33" fill="none" stroke="#228B22" stroke-width="2"/>
+  </g>
+  
+  <!-- Water/Sea -->
+  <rect x="0" y="280" width="600" height="20" fill="#4682B4" opacity="0.7"/>
+  <path d="M 0 285 Q 50 280 100 285 T 200 285 T 300 285 T 400 285 T 500 285 T 600 285" 
+        fill="none" stroke="#87CEEB" stroke-width="2"/>
+  
+  <!-- Boats -->
+  <g transform="translate(450, 275)">
+    <path d="M 0 5 L 20 5 L 18 10 L 2 10 Z" fill="#FFFFFF"/>
+    <rect x="8" y="0" width="1" height="8" fill="#8B4513"/>
+    <polygon points="9,0 15,2 9,4" fill="#FF0000"/>
+  </g>
+  
+  <!-- Birds -->
+  <g stroke="#333" stroke-width="1" fill="none">
+    <path d="M 120 80 Q 125 75 130 80" />
+    <path d="M 130 80 Q 135 75 140 80" />
+    
+    <path d="M 400 90 Q 405 85 410 90" />
+    <path d="M 410 90 Q 415 85 420 90" />
+    
+    <path d="M 250 100 Q 255 95 260 100" />
+    <path d="M 260 100 Q 265 95 270 100" />
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g opacity="0.4">
+    <circle cx="80" cy="150" r="2" fill="#FFD700"/>
+    <circle cx="520" cy="120" r="3" fill="#FF0000"/>
+    <circle cx="300" cy="180" r="2" fill="#00732F"/>
+    <circle cx="150" cy="160" r="1" fill="#FFD700"/>
+    <circle cx="450" cy="140" r="2" fill="#FF0000"/>
+  </g>
+</svg>

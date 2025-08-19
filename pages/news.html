@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa News & Updates - UAE Visa Services</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="../images/uae-flag.svg" alt="UAE Flag" class="flag-icon">
+                <span class="brand-text">UAE Visa Services</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="apply-visa.html">Apply Visa</a>
+                <a href="contact.html">Contact</a>
+                <a href="rules.html">Rules</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="news.html" class="active">News</a>
+            </nav>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1><i class="fas fa-newspaper"></i> Visa News & Updates</h1>
+                <p>Stay informed with the latest visa policies, immigration news, and travel updates from around the world</p>
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <span>News & Updates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Filter Section -->
+    <section class="news-filter">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All News</button>
+                    <button class="filter-btn" data-filter="uae">UAE Updates</button>
+                    <button class="filter-btn" data-filter="india">India Relations</button>
+                    <button class="filter-btn" data-filter="global">Global News</button>
+                    <button class="filter-btn" data-filter="policy">Policy Changes</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="newsSearch" placeholder="Search news...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breaking News -->
+    <section class="breaking-news">
+        <div class="container">
+            <div class="breaking-header">
+                <span class="breaking-label"><i class="fas fa-bolt"></i> Breaking News</span>
+            </div>
+            <div class="breaking-content">
+                <div class="breaking-item active">
+                    <span class="breaking-text">UAE announces new 10-year Golden Visa categories for skilled professionals and investors</span>
+                    <span class="breaking-time">2 hours ago</span>
+                </div>
+                <div class="breaking-item">
+                    <span class="breaking-text">India-UAE visa processing time reduced to 24 hours for business travelers</span>
+                    <span class="breaking-time">5 hours ago</span>
+                </div>
+                <div class="breaking-item">
+                    <span class="breaking-text">New digital visa application system launched for multinational companies</span>
+                    <span class="breaking-time">1 day ago</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News -->
+    <section class="featured-news">
+        <div class="container">
+            <h2 class="section-title">Featured Stories</h2>
+            <div class="featured-grid">
+                <article class="featured-main" data-category="uae">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/600x400/c41e3a/ffffff?text=UAE+Golden+Visa" alt="UAE Golden Visa">
+                        <div class="news-category">UAE Updates</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>UAE Expands Golden Visa Program for Security Professionals</h3>
+                        <p>The UAE government has announced significant expansions to its Golden Visa program, specifically targeting retired security officers and defense personnel from allied nations including India...</p>
+                        <div class="news-meta">
+                            <span class="news-date"><i class="fas fa-calendar"></i> January 15, 2024</span>
+                            <span class="news-author"><i class="fas fa-user"></i> UAE Immigration</span>
+                            <span class="read-time"><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <div class="featured-sidebar">
+                    <article class="featured-side" data-category="india">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/300x200/009639/ffffff?text=India+UAE+Relations" alt="India UAE Relations">
+                            <div class="news-category">India Relations</div>
+                        </div>
+                        <div class="news-content">
+                            <h4>India-UAE Strategic Partnership Enhances Visa Facilitation</h4>
+                            <div class="news-meta">
+                                <span class="news-date"><i class="fas fa-calendar"></i> January 12, 2024</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="featured-side" data-category="policy">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/300x200/2c3e50/ffffff?text=Digital+Visa" alt="Digital Visa">
+                            <div class="news-category">Policy Changes</div>
+                        </div>
+                        <div class="news-content">
+                            <h4>New Digital Visa Platform Streamlines Corporate Applications</h4>
+                            <div class="news-meta">
+                                <span class="news-date"><i class="fas fa-calendar"></i> January 10, 2024</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Grid -->
+    <section class="latest-news">
+        <div class="container">
+            <h2 class="section-title">Latest Updates</h2>
+            <div class="news-grid" id="newsGrid">
+                <!-- UAE News -->
+                <article class="news-card" data-category="uae">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x250/c41e3a/ffffff?text=UAE+Business+Visa" alt="UAE Business Visa">
+                        <div class="news-category">UAE Updates</div>
+                        <div class="news-date-badge">Jan 14</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>UAE Introduces Fast-Track Business Visa for Tech Companies</h3>
+                        <p>The UAE has launched a new fast-track visa program specifically designed for technology companies and startups, reducing processing time to just 48 hours...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> January 14, 2024</span>
+                            <span><i class="fas fa-eye"></i> 1.2K views</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag">Business Visa</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="india">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x250/009639/ffffff?text=Security+Officers" alt="Security Officers">
+                        <div class="news-category">India Relations</div>
+                        <div class="news-date-badge">Jan 13</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Special Visa Category for Retired Indian Security Personnel</h3>
+                        <p>A new visa category has been established for retired Indian military and security officers, offering long-term residence options and simplified application processes...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> January 13, 2024</span>
+                            <span><i class="fas fa-eye"></i> 2.1K views</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag">Security Officers</span>
+                            <span class="tag">Long-term Visa</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="global">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x250/34495e/ffffff?text=Global+Travel" alt="Global Travel">
+                        <div class="news-category">Global News</div>
+                        <div class="news-date-badge">Jan 12</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>International Travel Restrictions Update for 2024</h3>
+                        <p>Latest updates on international travel restrictions and visa requirements across major destinations, including health protocols and documentation requirements...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> January 12, 2024</span>
+                            <span><i class="fas fa-eye"></i> 3.5K views</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag">Travel Restrictions</span>
+                            <span class="tag">Health Protocols</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="policy">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x250/8e44ad/ffffff?text=Policy+Update" alt="Policy Update">
+                        <div class="news-category">Policy Changes</div>
+                        <div class="news-date-badge">Jan 11</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>New Documentation Requirements for Corporate Visas</h3>
+                        <p>Updated documentation requirements for corporate visa applications, including new compliance standards and digital verification processes...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> January 11, 2024</span>
+                            <span><i class="fas fa-eye"></i> 1.8K views</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag">Documentation</span>
+                            <span class="tag">Corporate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="uae">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x250/e74c3c/ffffff?text=Investment+Visa" alt="Investment Visa">
+                        <div class="news-category">UAE Updates</div>
+                        <div class="news-date-badge">Jan 10</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>UAE Investment Visa Threshold Reduced for Indian Investors</h3>
+                        <p>The minimum investment threshold for UAE investor visas has been reduced for Indian nationals, making it more accessible for small and medium enterprises...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> January 10, 2024</span>
+                            <span><i class="fas fa-eye"></i> 2.7K views</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag">Investment</span>
+                            <span class="tag">Indian Investors</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card" data-category="global">
+                    <div class="news-image">
+                        <img src="https://via.placeholder.com/400x250/27ae60/ffffff?text=Digital+Nomad" alt="Digital Nomad">
+                        <div class="news-category">Global News</div>
+                        <div class="news-date-badge">Jan 09</div>
+                    </div>
+                    <div class="news-content">
+                        <h3>Digital Nomad Visa Programs Gain Popularity Worldwide</h3>
+                        <p>Countries worldwide are introducing digital nomad visa programs to attract remote workers and freelancers, with UAE leading the initiative in the Middle East...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> January 9, 2024</span>
+                            <span><i class="fas fa-eye"></i> 4.2K views</span>
+                        </div>
+                        <div class="news-tags">
+                            <span class="tag">Digital Nomad</span>
+                            <span class="tag">Remote Work</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="load-more">
+                <button class="btn btn-secondary" id="loadMoreNews">
+                    <i class="fas fa-plus"></i> Load More News
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="news-newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3><i class="fas fa-envelope"></i> Stay Updated</h3>
+                    <p>Subscribe to our newsletter and get the latest visa news and updates delivered to your inbox</p>
+                </div>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Subscribe
+                        </button>
+                    </div>
+                    <div class="newsletter-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-custom"></span>
+                            Weekly digest
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            Breaking news alerts
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/uae-flag.svg" alt="UAE Flag" class="flag-icon">
+                        <span class="brand-text">UAE Visa Services</span>
+                    </div>
+                    <p>Your trusted partner for UAE visa services, specializing in corporate solutions and services for retired security professionals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="apply-visa.html">Apply Visa</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Business Visa</a></li>
+                        <li><a href="#">Tourist Visa</a></li>
+                        <li><a href="#">Golden Visa</a></li>
+                        <li><a href="#">Corporate Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+                        <p><i class="fas fa-phone"></i> +971-4-XXX-XXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@uaevisaservices.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 UAE Visa Services. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="rules.html">Privacy Policy</a>
+                    <a href="rules.html">Terms of Service</a>
+                    <a href="rules.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // News filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const newsCards = document.querySelectorAll('.news-card');
+            const searchInput = document.getElementById('newsSearch');
+            const loadMoreBtn = document.getElementById('loadMoreNews');
+            const breakingItems = document.querySelectorAll('.breaking-item');
+            
+            // Filter functionality
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter news cards
+                    newsCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 10);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                newsCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const content = card.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Breaking news rotation
+            let currentBreaking = 0;
+            setInterval(() => {
+                breakingItems[currentBreaking].classList.remove('active');
+                currentBreaking = (currentBreaking + 1) % breakingItems.length;
+                breakingItems[currentBreaking].classList.add('active');
+            }, 5000);
+            
+            // Load more functionality (simulated)
+            loadMoreBtn.addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-check"></i> All news loaded';
+                    this.disabled = true;
+                }, 2000);
+            });
+            
+            // Newsletter form
+            document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                if (email) {
+                    showNotification('Successfully subscribed to newsletter!', 'success');
+                    this.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
