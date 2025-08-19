@@ -1,10 +1,26 @@
 // API Configuration
-const API_BASE_URL = 'https://uae-visa-services.onrender.com/api';
+// Automatically detect environment and use appropriate API URL
+const API_BASE_URL = (() => {
+    // If running on Render or other production environment
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        // Extract the base domain and construct backend URL
+        const hostname = window.location.hostname;
+        if (hostname.includes('onrender.com')) {
+            // For Render deployment, assume backend is at uae-visa-backend.onrender.com
+            return 'https://uae-visa-services.onrender.com/api';
+        }
+        // For other production environments, try same domain with /api
+        return `${window.location.protocol}//${hostname}/api`;
+    }
+    // Local development
+    return 'http://localhost:3000/api';
+})();
 
 // API Helper Functions
 class APIClient {
     constructor() {
         this.baseURL = API_BASE_URL;
+        console.log('API Client initialized with URL:', this.baseURL);
     }
 
     async request(endpoint, options = {}) {
@@ -27,7 +43,17 @@ class APIClient {
 
             return data;
         } catch (error) {
-            console.error('API Request failed:', error);
+            console.error('API Request failed:', {
+                url: url,
+                error: error.message,
+                stack: error.stack
+            });
+            
+            // Provide more helpful error messages
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                throw new Error(`Cannot connect to backend server at ${this.baseURL}. Please check if the backend is running.`);
+            }
+            
             throw error;
         }
     }
