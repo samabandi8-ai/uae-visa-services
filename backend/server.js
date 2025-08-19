@@ -33,7 +33,12 @@ app.use(limiter);
 // CORS configuration
 const allowedOrigins = process.env.CORS_ORIGIN 
   ? process.env.CORS_ORIGIN.split(',').map(origin => origin.trim())
-  : ['http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500'];
+  : [
+      'http://localhost:3000', 
+      'http://127.0.0.1:5500', 
+      'http://localhost:5500',
+      'https://imaginative-lamington-d385e5.netlify.app'
+    ];
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -245,8 +250,14 @@ app.post('/api/visa-application', upload.fields([
   { name: 'photo', maxCount: 1 },
   { name: 'additionalDocuments', maxCount: 5 }
 ]), validateVisaApplication, (req, res) => {
+  console.log('=== BACKEND: Visa Application Request Received ===');
+  console.log('Request origin:', req.get('origin'));
+  console.log('Request body keys:', Object.keys(req.body));
+  console.log('Request files:', req.files ? Object.keys(req.files) : 'No files');
+  
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
+    console.log('Validation errors:', errors.array());
     return res.status(400).json({ errors: errors.array() });
   }
 
@@ -276,6 +287,9 @@ app.post('/api/visa-application', upload.fields([
     terms_accepted, privacy_accepted
   ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
+  console.log('Attempting to insert into database...');
+  console.log('SQL:', sql);
+  
   db.run(sql, [
     fullName, email, phone, nationality, dateOfBirth, gender,
     passportNumber, passportExpiry, visaType, purposeOfVisit,
@@ -286,8 +300,15 @@ app.post('/api/visa-application', upload.fields([
     termsAccepted === 'true' ? 1 : 0, privacyAccepted === 'true' ? 1 : 0
   ], function(err) {
     if (err) {
-      console.error('Database error:', err.message);
-      return res.status(500).json({ error: 'Failed to submit visa application' });
+      console.error('=== DATABASE ERROR ===');
+      console.error('Error message:', err.message);
+      console.error('Error code:', err.code);
+      console.error('Full error:', err);
+      return res.status(500).json({ 
+        success: false,
+        error: 'Failed to submit visa application',
+        message: 'Database error occurred'
+      });
     }
 
     // Send confirmation email
@@ -310,11 +331,17 @@ app.post('/api/visa-application', upload.fields([
       }
     });
 
+    console.log('=== DATABASE SUCCESS ===');
+    console.log('Application inserted with ID:', this.lastID);
+    console.log('Sending success response...');
+    
     res.json({
       success: true,
       message: 'Visa application submitted successfully',
       applicationId: this.lastID
     });
+    
+    console.log('=== END BACKEND PROCESSING ===');
   });
 });
 
