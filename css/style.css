@@ -1282,7 +1282,12 @@ body {
 
 .radio-label input[type="radio"],
 .checkbox-label input[type="checkbox"] {
-    display: none;
+   position: absolute;
+opacity: 0;
+width: 20px;
+height: 20px;
+margin: 0;
+cursor: pointer;
 }
 
 .radio-label input[type="radio"]:checked + .radio-custom::after {
