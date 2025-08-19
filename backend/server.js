@@ -190,7 +190,7 @@ function initializeDatabase() {
 }
 
 // Email configuration (using nodemailer)
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.gmail.com',
   port: process.env.SMTP_PORT || 587,
   secure: false,
